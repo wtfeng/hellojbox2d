@@ -1,0 +1,16 @@
+group 'fr.auroden'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.8
+
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.jbox2d:jbox2d-library:2.2.1.1'
+}
