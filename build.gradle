@@ -2,6 +2,8 @@ group 'fr.auroden'
 version '1.0-SNAPSHOT'
 
 apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
 
 sourceCompatibility = 1.8
 
@@ -14,3 +16,16 @@ repositories {
 dependencies {
     compile 'org.jbox2d:jbox2d-library:2.2.1.1'
 }
+
+//create a single Jar with all dependencies
+task fatJar(type: Jar) {
+	manifest {
+        attributes 'Implementation-Title': 'JBox2D with JavaFX example',
+            'Implementation-Version': version,
+            'Main-Class': "fr.auroden.hellojbox2d.HelloJBox2D"
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
