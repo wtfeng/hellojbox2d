@@ -9,6 +9,8 @@ bin
 .settings
 .metadata
 hellojbox2d.iml
+hellojbox2d.ipr
+hellojbox2d.iws
 
 # Subversion and CVS
 .svn
@@ -37,4 +39,8 @@ workspace
 
 #Others
 .DS_Store
+
+# Gradle
+.gradle
+build
 
