@@ -35,8 +35,7 @@ import org.jbox2d.dynamics.Body;
 import org.jbox2d.dynamics.Fixture;
 
 public class Rectangle extends javafx.scene.shape.Rectangle implements BodyListener {
-	public Rectangle(BodyWrapper bodyWrapper) {
-		bodyWrapper.addBodyListener(this);
+	public Rectangle() {
 		setSmooth(true);
 	}
 

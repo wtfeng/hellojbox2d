@@ -47,7 +47,8 @@ public class GUI implements WorldListener {
 	@Override
 	public void worldUpdate(WorldEvent e) {
 		if (e.getType() == WorldEvent.Type.BODY_ADDED) {
-			Rectangle rectangle = new Rectangle(e.getBody());
+			Rectangle rectangle = new Rectangle();
+			e.getBody().addBodyListener(rectangle);
 			this.rectangles.add(rectangle);
 			this.group.getChildren().add(rectangle);
 		}
